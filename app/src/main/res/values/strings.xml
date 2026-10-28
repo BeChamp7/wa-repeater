@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Repeater</string>
+    <string name="service_label">Repeater (WhatsApp)</string>
+    <string name="a11y_description">Shows a floating bubble over WhatsApp. When you press Start, it types your message into the open chat and taps Send on a timer until you stop it. It only looks at WhatsApp and WhatsApp Business, and nothing leaves your phone.</string>
+</resources>

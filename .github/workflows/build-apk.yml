@@ -1,0 +1,47 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write   # lets the workflow publish the Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Build debug APK
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk Repeater.apk
+
+      # Download from the Actions run page (needs GitHub login)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Repeater-apk
+          path: Repeater.apk
+
+      # Public download link that always points at the newest build:
+      # https://github.com/BeChamp7/wa-repeater/releases/latest/download/Repeater.apk
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Repeater build ${{ github.run_number }}
+          body: Install Repeater.apk on your phone, then follow the setup screen in the app.
+          files: Repeater.apk
+          make_latest: true

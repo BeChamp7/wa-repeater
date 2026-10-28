@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Speech bubble with a repeat arrow. 108dp adaptive-icon canvas, art kept inside the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#00A884"
+        android:pathData="M54,30C40.7,30 30,39.8 30,52C30,58.6 33.1,64.5 38,68.5L35,78L46,72.8C48.5,73.6 51.2,74 54,74C67.3,74 78,64.2 78,52C78,39.8 67.3,30 54,30Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,40C47.4,40 42,45.4 42,52L37,52L44,59L51,52L46,52C46,47.6 49.6,44 54,44C58.4,44 62,47.6 62,52C62,56.4 58.4,60 54,60L54,64C60.6,64 66,58.6 66,52C66,45.4 60.6,40 54,40Z" />
+</vector>
