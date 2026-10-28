@@ -9,31 +9,70 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="22dp">
+        android:paddingHorizontal="22dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="32dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             android:text="Repeater"
             android:textColor="@color/text_main"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/text_version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_dim"
+            android:textSize="13sp" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:text="A floating bubble over WhatsApp that keeps sending your text or emoji every few seconds until you tap it to stop."
             android:textColor="@color/text_dim"
             android:textSize="15sp" />
 
-        <!-- Step 1 -->
+        <!-- Step 1: restricted settings -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="1. Display over other apps"
+            android:text="1. Unlock settings (one time)"
+            android:textColor="@color/text_main"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/status_restricted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:lineSpacingExtra="3dp"
+            android:text="Android greys out steps 2 and 3 for apps installed outside the Play Store.\n\n• Tap the button below\n• Tap ⋮ (top right) → Allow restricted settings\n• Confirm with your fingerprint or PIN\n\nNo “Allow restricted settings” in the menu? Tap the greyed switch in step 2 once (Android says “Restricted setting”), then come back and try again."
+            android:textColor="@color/text_dim"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/btn_app_info"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_button"
+            android:gravity="center"
+            android:text="Open App info"
+            android:textColor="#FFFFFFFF"
+            android:textStyle="bold" />
+
+        <!-- Step 2: overlay -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="2. Display over other apps"
             android:textColor="@color/text_main"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -57,12 +96,12 @@
             android:textColor="#FFFFFFFF"
             android:textStyle="bold" />
 
-        <!-- Step 2 -->
+        <!-- Step 3: accessibility -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
-            android:text="2. Turn on the Repeater service"
+            android:text="3. Turn on the Repeater service"
             android:textColor="@color/text_main"
             android:textSize="17sp"
             android:textStyle="bold" />
@@ -82,34 +121,16 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/bg_button"
             android:gravity="center"
-            android:text="Open Accessibility settings"
+            android:text="Turn on"
             android:textColor="#FFFFFFFF"
             android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Toggle greyed out or says “Restricted setting”? Android blocks this for apps installed outside the Play Store. Tap below, then ⋮ (top right) → Allow restricted settings, and try again."
-            android:textColor="@color/text_dim"
-            android:textSize="13sp" />
-
-        <TextView
-            android:id="@+id/btn_app_info"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="6dp"
-            android:background="@drawable/bg_field"
-            android:gravity="center"
-            android:text="Open App info"
-            android:textColor="@color/text_main" />
-
-        <!-- Step 3 -->
+        <!-- Step 4: use -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
-            android:text="3. Use it"
+            android:text="4. Use it"
             android:textColor="@color/text_main"
             android:textSize="17sp"
             android:textStyle="bold" />

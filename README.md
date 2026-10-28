@@ -2,7 +2,9 @@
 
 A floating bubble over WhatsApp. Tap it, type text or pick an emoji, set a delay, hit **Start** — it keeps sending into the open chat until you tap the bubble again.
 
-No dependencies, no network, no ads. Kotlin, minSdk 26 (Android 8), targetSdk 34.
+No dependencies, no network, no ads. Kotlin, minSdk 26 (Android 8), targetSdk 35.
+
+**Download the latest build:** https://github.com/BeChamp7/wa-repeater/releases/latest/download/Repeater.apk
 
 ## Build & install
 
@@ -11,9 +13,9 @@ No dependencies, no network, no ads. Kotlin, minSdk 26 (Android 8), targetSdk 34
 
 ## First-time setup (on the phone)
 
-1. Open **Repeater** → **Allow** "Display over other apps" (needed to type in the floating panel).
-2. **Open Accessibility settings** → *Repeater (WhatsApp)* → turn on.
-   - Android 13+: if the toggle is greyed out ("Restricted setting"), go to App info → ⋮ → **Allow restricted settings**, then try again.
+1. **Unlock restricted settings:** Repeater → *Open App info* → ⋮ → **Allow restricted settings** (Android greys out overlay/accessibility for apps installed outside the Play Store).
+2. **Allow** "Display over other apps".
+3. **Turn on** *Repeater (WhatsApp)* in Accessibility settings.
 
 ## Using it
 
@@ -37,3 +39,10 @@ If a WhatsApp update breaks it, the view IDs in `findInput()` / `findSend()` are
 
 - Rapid automated sending can get a WhatsApp number flagged or temporarily banned. The 1 s minimum is deliberate; keep runs short.
 - The accessibility service can technically see the screen. This code only ever reads WhatsApp's windows, stores only your last message/delay/limit locally, and has no internet permission.
+
+## Signing
+
+Release builds are signed with the permanent key in `signing/` so new builds install as updates over old ones.
+The key and its password are committed because this repo can't use GitHub Actions secrets from where it was set up.
+Anyone with this repo could sign an APK with the same key, so only install Repeater builds from this repo's Releases.
+To lock it down: move the password into a repo secret, read it in `app/build.gradle.kts` via `System.getenv`, and delete it from `signing/signing.properties`.
